@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  @apply w-screen p-4 xl:max-w-7xl mx-auto;
+}
+
+.center {
+  @apply flex items-center justify-center;
+}
