@@ -41,6 +41,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/firebase',
+    'vue2-editor/nuxt',
   ],
 
   firebase: {
@@ -75,4 +76,6 @@ export default {
   build: {
     transpile: ['oh-vue-icons'],
   },
+
+  components: true,
 }

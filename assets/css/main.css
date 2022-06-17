@@ -13,3 +13,11 @@ body {
 .center {
   @apply flex items-center justify-center;
 }
+
+.active {
+  @apply bg-gray-900 text-white;
+}
+
+.tile {
+  @apply w-10 h-10 rounded-sm;
+}

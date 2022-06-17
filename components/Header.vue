@@ -4,7 +4,7 @@
       class="xl:max-w-7xl flex flex-row items-center justify-between container"
     >
       <div class="text-lg font-bold flex flex-row gap-2 w-fit items-center">
-        <v-icon name="hi-qrcode" animation="float" speed="slow" />
+        <OhVueIcon name="hi-qrcode" animation="float" speed="slow" />
         <div class="w-60">Blog-App</div>
       </div>
       <ul class="flex flex-row gap-4">
@@ -23,13 +23,8 @@
 </template>
 
 <script>
-import { OhVueIcon } from 'oh-vue-icons'
-
 export default {
   name: 'Header',
-  components: {
-    'v-icon': OhVueIcon,
-  },
   methods: {
     logout() {
       this.$fire.auth.signOut()

@@ -7,16 +7,7 @@
       >
         Hello {{ this.$fire.auth.currentUser.displayName }}
       </div>
-      <ArticleTile
-        v-for="article in this.$store.state.articleList"
-        :article="article"
-        :key="article.id"
-      />
-      <ArticleTile
-        v-for="article in this.$store.state.articleList"
-        :article="article"
-        :key="article.id"
-      />
+      <ArticleTile v-for="post in this.posts" :post="post" :key="post.id" />
     </div>
   </div>
 </template>
@@ -27,7 +18,37 @@ export default {
   data() {
     return {
       title: 'hello',
+      posts: [],
     }
+  },
+  methods: {
+    async loadPosts() {
+      const user = this.$fire.auth.currentUser
+      const postRef = this.$fire.firestore
+        .collection('blogs')
+        .doc(user.uid)
+        .collection('posts')
+      // const snapshot = await postRef.get()
+      // if (!snapshot.empty) {
+      //   snapshot.forEach((doc) => {
+      //     this.posts.push({ id: doc.id, data: doc.data() })
+      //   })
+      // } else {
+      //   console.log('No such documents!')
+      // }
+      // this.posts.forEach((blog) => {
+      //   console.log(blog)
+      // })
+      const observer = postRef.onSnapshot((snapshot) => {
+        this.posts = []
+        snapshot.forEach((doc) => {
+          this.posts.push({ id: doc.id, data: doc.data() })
+        })
+      })
+    },
+  },
+  created() {
+    this.loadPosts()
   },
 }
 </script>

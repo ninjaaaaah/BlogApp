@@ -8,3 +8,4 @@ const Hi = Object.values({ ...HiIcons })
 addIcons(...Fa, ...Hi)
 
 Vue.use(OhVueIcon)
+Vue.component('OhVueIcon', OhVueIcon)
