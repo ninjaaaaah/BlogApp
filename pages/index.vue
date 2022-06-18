@@ -28,18 +28,8 @@ export default {
         .collection('blogs')
         .doc(user.uid)
         .collection('posts')
-      // const snapshot = await postRef.get()
-      // if (!snapshot.empty) {
-      //   snapshot.forEach((doc) => {
-      //     this.posts.push({ id: doc.id, data: doc.data() })
-      //   })
-      // } else {
-      //   console.log('No such documents!')
-      // }
-      // this.posts.forEach((blog) => {
-      //   console.log(blog)
-      // })
-      const observer = postRef.onSnapshot((snapshot) => {
+
+      postRef.onSnapshot((snapshot) => {
         this.posts = []
         snapshot.forEach((doc) => {
           this.posts.push({ id: doc.id, data: doc.data() })

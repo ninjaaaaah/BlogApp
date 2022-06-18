@@ -14,7 +14,7 @@
         <div class="font-bold text-md line-clamp-2">
           {{ post.data.title }}
         </div>
-        <div class="text-sm line-clamp-3" v-html="post.data.content"></div>
+        <div class="text-sm line-clamp-3" v-html="post.data.excerpt"></div>
       </div>
     </div>
   </NuxtLink>

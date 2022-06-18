@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen bg-pink-500 text-white shadow-md sticky top-0">
+  <div class="w-screen bg-pink-500 text-white shadow-md sticky top-0 z-50">
     <div
       class="xl:max-w-7xl flex flex-row items-center justify-between container"
     >

@@ -19,5 +19,36 @@ body {
 }
 
 .tile {
-  @apply w-10 h-10 rounded-sm;
+  @apply w-10 h-10 rounded;
+}
+
+.article {
+  @apply font-article text-[#292929];
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Charter';
+    src: url(/assets/fonts/Charter-Regular.ttf) format('truetype');
+  }
+  h1 {
+    @apply mb-6 text-3xl font-bold;
+  }
+  h2 {
+    @apply text-2xl mt-8 font-semibold;
+  }
+  h3 {
+    @apply text-xl mt-4 font-semibold;
+  }
+  p {
+    @apply text-lg font-normal mt-4;
+  }
+  code {
+    font-size: 0.9rem;
+    padding: 0.25em;
+    border-radius: 0.25em;
+    background-color: rgba(105, 105, 105, 0.1);
+    color: #616161;
+    box-decoration-break: clone;
+  }
 }

@@ -1,6 +1,13 @@
 <template>
   <div>
-    {{ post.data }}
+    <Header />
+    <div class="container min-h-screen gap-4 bg-white">
+      <h1>
+        {{ post.data.title }}
+      </h1>
+      <div>{{ Date(post.data.timestamp) }}</div>
+      <div v-html="post.data.content" class="article"></div>
+    </div>
   </div>
 </template>
 
@@ -13,7 +20,7 @@ export default {
         data: {
           title: '',
           content: '',
-          date: '',
+          timestamp: '',
         },
       },
     }
@@ -35,7 +42,7 @@ export default {
       console.log(this.post)
     },
   },
-  created() {
+  mounted() {
     this.loadPost()
   },
 }
